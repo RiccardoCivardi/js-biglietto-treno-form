@@ -1,0 +1,30 @@
+body {
+  background-color: deeppink;
+}
+
+i,
+i + label {
+  cursor: pointer;
+}
+
+.fs-7 {
+font-size: 0.7rem;
+}
+
+.container-custom {
+  width: 60%;
+}
+
+.text-dpink {
+  color: deeppink;
+}
+
+.bg-dpink {
+  background-color: rgba(255, 20, 147, 0.8);
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 20, 147, 0.25);
+  border-color: lightpink;
+}

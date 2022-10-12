@@ -8,6 +8,10 @@
   <!-- BOOTSTRAP -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css' integrity='sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==' crossorigin='anonymous'/>
 
+
+  <!-- FONT AWESOME -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous'/>
+
   <!-- MAIN STYLES -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -16,7 +20,94 @@
 </head>
 <body>
 
-  <h1>ciao</h1>
+  <h2 class="text-uppercase fw-bold text-white text-center mt-5">Calcola il prezzo del tuo biglietto</h2>
+  
+  <div class="container-custom mx-auto mt-3 p-4 card shadow-lg">
+    
+    <div class="d-flex justify-content-center flex-wrap mb-3">
+    
+      <div class="mb-3 d-flex flex-column align-items-center">
+        <label for="nome-cognome" class="form-label text-dpink fw-bold">Passeggero</label>
+        <input type="text" class="form-control" id="nome-cognome" placeholder="Nome e Cognome" value="">
+      </div>
+
+      <div class="mb-3 mx-5 d-flex flex-column align-items-center">
+        <label for="km-tratta" class="form-label text-dpink fw-bold text-center">Lunghezza della tratta</label>
+        <input type="number" class="form-control" id="km-tratta" placeholder="Kilometri" value="">
+      </div>
+        
+      <div class="mb-3 d-flex flex-column align-items-center">
+
+        <label for="fascia-eta" class="form-label text-dpink fw-bold">Fascia d'età</label>
+        <select class="form-select" id="fascia-eta" placeholder="ciao">
+          <option value="maggiorenne" selected>Maggiorenne</option>
+          <option value="minorenne">Minorenne</option>
+          <option value="senior">Over 65</option>
+        </select>
+
+      </div>
+  
+    </div>
+        
+    <div class="mb-4">
+
+      <i id="info" class="fa-solid fa-circle-info  text-info fs-4"></i>
+      <label for="info" class="fs-7">info</label>
+
+      <ul class="card bg-dpink shadow text-white fs-7 py-2 pe-2 d-none">
+        <li>In caso di controllo il "Nome" e il "Cognome" sul biglietto devono corrispondere a quelli riportati sul proprio documento di identità.</li>
+        <li>I passeggeri minorenni godono dello sconto del 20%.</li>
+        <li>I passeggeri over 65 godono dello sconto del 40%.</li>
+        <li>Il prezzo riportato sul biglietto è gia comprensivo dello sconto se di diritto.</li>
+        <li>Nel caso in cui il passeggero dichiara una fascia d'età diversa dalla propria, solo per godere di uno sconto, verrà lasciato a piedi nel mezzo del nulla! (il Capotreno)</li>
+      </ul>
+    </div>
+
+    <div class="text-center">
+
+      <button id="btn-input" class="btn btn-dark text-uppercase me-5">Genera</button>
+      <button id="btn-clear" class="btn btn-light">Annulla</button>
+
+    </div>
+    
+  </div>
+
+  <div>
+
+    <h2 class="text-uppercase fw-bold text-white text-center mt-5">Il tuo biglietto</h2>
+
+    <div class="container-custom mx-auto mt-3 p-4 card rounded-0
+    shadow mb-5">
+      <h4 class="text-uppercase">Dettagli biglietto</h4>
+
+      <div>
+        
+        <div class="w-100 bg-dark text-white fs-7 fw-bold p-2 mb-2">
+          <p class="text-uppercase mb-0">Nome passeggero: <span class="fs-5" id="name-passenger"></span></p>
+          <p class="text-uppercase mb-0">Tipo biglietto: <span id="type-ticket"></span></p>
+        </div>
+        
+        <div class="w-100 border-top border-bottom border-dark fs-7 d-flex justify-content-between align-items-center">
+          
+          <div>
+
+            <p class="text-uppercase mb-0">Carrozza: 12</p>
+            <p class="text-uppercase mb-0">Posto a sedere: 31 C</p>
+            <p class="text-uppercase mb-0">Codice cp: 29010</p>
+
+          </div>
+
+          <div class="card bg-info p-1">
+            <p class="text-lowercase mb-0 fs-7 fw-bold">costo biglietto: <span class="fs-5" id="price-ticket"></span></p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div> 
+
+  </div>
 
   <!-- SCRIPT JS -->
   <script src="js/script.js"></script>
